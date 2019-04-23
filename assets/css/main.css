@@ -108,6 +108,8 @@ h1, h2, h3, h4, h5, h6, p{
 .header__intro{
     display: flex;
     justify-content: space-between;
+
+    position: relative;
 }
 
 .header__logo{
@@ -167,7 +169,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 .nav__link--footer{
     color: #bcbcbc;
-    font-size: 12px;
+    font-size: 16px;
     text-transform: none;
     font-weight: 300;
 
@@ -192,9 +194,11 @@ h1, h2, h3, h4, h5, h6, p{
     cursor: pointer;
 
     position: absolute;
-    top: 24px;
-    right: 24px;
+    top: 50%;
+    right: 0;
     z-index: 1;
+
+    transform: translateY(-50%);
 }
 
 .nav-toggle__item{
@@ -394,14 +398,14 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .number__count{
-    padding-left: 70px;
+    padding-left: 60px;
 
     font-size: 18px;
     color: #ffffff;
 }
 
 .number__text{
-    padding-left: 70px;
+    padding-left: 60px;
 
     color: #ffffff;
     text-transform: uppercase;
@@ -701,7 +705,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 /* Footer */
 .footer{
-    padding: 80px 0px 40px 0px;
+    padding: 40px 20px;
 
     background-color: #141414;
 
@@ -711,7 +715,15 @@ h1, h2, h3, h4, h5, h6, p{
 
 .footer .container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__information{
+    display: flex;
+    justify-content: space-between;
+
+    width: 50%;
 }
 
 .company{
@@ -725,6 +737,9 @@ h1, h2, h3, h4, h5, h6, p{
 
 .footer__nav{
     display: flex;
+    justify-content: flex-end;
+
+    width: 50%;
 }
 
 .footer__nav .nav{
@@ -886,9 +901,24 @@ h1, h2, h3, h4, h5, h6, p{
     .work__process{
         margin-top: 20px;
     }
+
+    /* Testimonials */
+    .testimonials{
+        padding: 50px;
+    }
+
+    /* Footer */
+    .footer{
+        padding: 30px 20px;
+    }
 }
 
 @media(max-width: 710px){
+    /* Header */
+    .header{
+        padding: 0px 40px;
+    }
+
     /* About */
     .about__item--header{
         font-size: 24px;
@@ -900,6 +930,40 @@ h1, h2, h3, h4, h5, h6, p{
 
     .about__profSkills:after{
         margin-top: 5px;
+    }
+
+    /* Work Process */
+    .work__process{
+        margin: 40px 0px;
+    }
+
+    /* Clients */
+    .clients{
+        margin: 0px;
+    }
+
+    .client__item{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        margin: 25px 0px;
+    }
+
+    /* Testimonials */
+    .testimonials{
+        padding: 30px;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 10px;
+        text-align: left;
+
+        padding: 20px 10px 20px 10px;
+    }
+
+    .footer__nav .nav:last-child{
+        margin-left: 0px;
     }
 }
 
@@ -983,29 +1047,6 @@ h1, h2, h3, h4, h5, h6, p{
     .btn--need_project{
         margin-top: 10px;
     }
-
-    /* Clients */
-    .clients{
-        margin: 0px;
-    }
-
-    .client__item{
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        margin: 25px 0px;
-    }
-
-    /* Footer */
-    .footer {
-        font-size: 10px;
-
-        padding: 40px 0px 20px 0px;
-    }
-
-    .footer__nav .nav:last-child{
-        margin-left: 0px;
-    }
 }
 @media (max-width: 480px){
     /* About */
@@ -1022,9 +1063,6 @@ h1, h2, h3, h4, h5, h6, p{
     .about__img{
         display: none;
     }
-}
-
-@media (max-width: 320px) {
     /* Work */
     .work__item {
         width: 100%;
@@ -1032,22 +1070,41 @@ h1, h2, h3, h4, h5, h6, p{
 
     /* Testimonials */
     .testimonials{
-        padding: 10px 5px;
+        padding: 20px 5px 10px 5px;
     }
 
     /* Footer */
-    .footer__nav{
-        display: none;
-    }
-
-    .contact{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .company{
+        max-width: 100%;
+        width: 100%;
     }
 
     .company__text{
-        max-width:100px;
+        margin-top: 10px;
+
+        max-width:100%;
+    }
+
+    .contact{
+        width: 100%;
+    }
+
+    .footer .container{
+        flex-wrap: wrap;
+    }
+
+    .footer__information{
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .footer__nav{
+        display: none;
     }
 }
 
